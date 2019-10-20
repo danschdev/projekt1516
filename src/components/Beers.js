@@ -13,6 +13,7 @@ export default class Beers extends Component {
         this.handleSave = this.handleSave.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleEnableAddMode = this.handleEnableAddMode.bind(this);
     }
 
     componentDidMount() {
@@ -30,13 +31,20 @@ export default class Beers extends Component {
     }
 
     handleCancel() {
-        this.setState({selectedBeer: null});
+        this.setState({selectedBeer: null, addingBeer: false});
     }
 
     handleChange(event) {
         let selectedBeer = this.state.selectedBeer;
         selectedBeer[event.target.name] = event.target.value;
         this.setState({selectedBeer: selectedBeer});
+    }
+
+    handleEnableAddMode() {
+        this.setState({
+            addingBeer: true,
+            selectedBeer: { id: '', name: '', untappd: ''}
+        })
     }
 
     render() {
@@ -52,6 +60,7 @@ export default class Beers extends Component {
                     }
                 </ul>
                 <div className="editarea">
+                    <button onClick={this.handleEnableAddMode}>Neues Bier einfügen</button>
                     <EditBeer
                         addingBeer={this.state.addingBeer}
                         selectedBeer={this.state.selectedBeer}
