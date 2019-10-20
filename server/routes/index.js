@@ -7,8 +7,12 @@ router.get('/beers', function(req, res, next) {
       id : 0,
       name : 'Holsten Edel',
       untappd: 1654
-    }
-  ];
+    },
+    {
+      id : 1,
+      name : 'Franziskaner Premium Weißbier',
+      untappd: 14564
+    }  ];
 
   res.json(beers);
 });
