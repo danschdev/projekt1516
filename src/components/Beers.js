@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Beer from './Beer';
 
 export default class Beers extends Component {
     state = { beers: [] };
@@ -16,9 +17,7 @@ export default class Beers extends Component {
                     {
                         this.state.beers.map(beer => {
                             return (
-                            <li>
-                                {beer.name}
-                            </li>
+                            <Beer beer={beer}/>
                             );
                         })
                     }
