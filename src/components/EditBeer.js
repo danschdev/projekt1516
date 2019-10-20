@@ -31,6 +31,7 @@ export default class EditBeer extends Component {
                             ></input>
                         </div>
                     </div>
+                    <button onClick={this.props.onCancel}>Cancel</button>
                 </div>
             )
         }

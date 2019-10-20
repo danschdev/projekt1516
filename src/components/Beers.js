@@ -30,11 +30,13 @@ export default class Beers extends Component {
     }
 
     handleCancel() {
-
+        this.setState({selectedBeer: null});
     }
 
-    handleChange() {
-        
+    handleChange(event) {
+        let selectedBeer = this.state.selectedBeer;
+        selectedBeer[event.target.name] = event.target.value;
+        this.setState({selectedBeer: selectedBeer});
     }
 
     render() {
