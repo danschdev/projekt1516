@@ -10,6 +10,7 @@ export default class Beer extends Component {
                 <div className="beer-element">
                     <div className="badge">{this.props.beer.id}</div>
                     <div className="name">{this.props.beer.name}</div>
+                    <div className="untappd"><a href={"https://untappd.com/b/beer/" + this.props.beer.untappd} target="blank">See me on Untappd</a></div>
                 </div>
             </li>
         )
