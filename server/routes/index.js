@@ -11,4 +11,12 @@ router.post('/beer', function(req, res, next) {
   beerService.create(req, res);
 })
 
+router.put('/beer', function(req, res, next) {
+  beerService.update(req, res);
+})
+
+router.delete('/beer/:id', function(req, res, next) {
+  beerService.destroy(req, res);
+})
+
 module.exports = router;
