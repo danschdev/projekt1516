@@ -7,4 +7,4 @@ const beerSchema = new Schema ({
 })
 
 const beer = mongoose.model('Beer', beerSchema);
-module.exports = Beer;
+module.exports = beer;
