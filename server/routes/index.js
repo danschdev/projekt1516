@@ -7,4 +7,8 @@ router.get('/beers', function(req, res, next) {
   beerService.get(req, res);
 });
 
+router.post('/beer', function(req, res, next) {
+  beerService.create(req, res);
+})
+
 module.exports = router;

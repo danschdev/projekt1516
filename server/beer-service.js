@@ -13,6 +13,16 @@ function get(req, res) {
     })
 }
 
+function create(req, res) {
+    const { id, name, untappd } = req.body;
+    const beer = new Beer( { id, name, untappd });
+    beer.save().then(() => {
+        res.json(beer);
+    }).catch( err => {
+        res.status(500).send(err);
+    })
+}
+
 module.exports = {
-    get
+    get, create
 };
